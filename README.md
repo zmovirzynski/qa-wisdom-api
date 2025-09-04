@@ -25,7 +25,7 @@ Useful for adding dynamic badges or random insights about testing and quality to
 
 ## Live Demo
 
-![QA Wisdom](https://qa-wisdom-aaclo7fgw-zmovirzynskis-projects.vercel.app/badge)
+![QA Wisdom](https://qa-wisdom-api.vercel.app/badge)
 
 ---
 
@@ -36,4 +36,4 @@ The badge updates every time someone visits your README!
 
 ### 1. As a badge in your README
 ```markdown
-![QA Wisdom](https://qa-wisdom-aaclo7fgw-zmovirzynskis-projects.vercel.app/badge)
+![QA Wisdom](https://qa-wisdom-api.vercel.app/badge)
