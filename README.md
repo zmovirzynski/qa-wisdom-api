@@ -27,10 +27,6 @@ Useful for adding dynamic badges or random insights about testing and quality to
 
 ![QA Wisdom](https://qa-wisdom-aaclo7fgw-zmovirzynskis-projects.vercel.app/badge)
 
-## Live Demo
-
-![QA Wisdom](https://qa-wisdom-aaclo7fgw-zmovirzynskis-projects.vercel.app/badge)
-
 ---
 
 ## How to use
