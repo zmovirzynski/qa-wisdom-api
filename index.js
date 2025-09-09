@@ -62,25 +62,29 @@ function generateSVG(text, opts = {}) {
 
   const lines = wrapText(text, 60);
   const contentHeight = lines.length * lineHeight;
-  const height = contentHeight + paddingY * 2;
+  const footerHeight = lineHeight + 8; // espaço extra para rodapé
+  const height = contentHeight + paddingY * 2 + footerHeight;
 
   const svg = `
-	<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" role="img" aria-label="QA Wisdom">
-	  <defs>
-		<linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
-		  <stop offset="0%" stop-color="#2E3440"/>
-		  <stop offset="100%" stop-color="#3B4252"/>
-		</linearGradient>
-	  </defs>
-	  <rect x="0" y="0" width="${width}" height="${height}" fill="url(#bg)" rx="8" ry="8" stroke="#5E81AC" stroke-width="1"/>
-	  <g fill="#ECEFF4" font-family="${fontFamily}" font-size="${fontSize}" font-weight="600">
-		${lines.map((line, i) =>
-		  `<text x="${width / 2}" y="${paddingY + (i * lineHeight) + fontSize}" text-anchor="middle">${escapeXml(line)}</text>`
-		).join('\n    ')}
-	  </g>
-	</svg>`;
-	  return svg;
-	}
+  <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" role="img" aria-label="QA Wisdom">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#2E3440"/>
+        <stop offset="100%" stop-color="#3B4252"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="${width}" height="${height}" fill="url(#bg)" rx="8" ry="8" stroke="#5E81AC" stroke-width="1"/>
+    <g fill="#ECEFF4" font-family="${fontFamily}" font-size="${fontSize}" font-weight="600">
+      ${lines.map((line, i) =>
+        `<text x="${width / 2}" y="${paddingY + (i * lineHeight) + fontSize}" text-anchor="middle">${escapeXml(line)}</text>`
+      ).join('\n      ')}
+    </g>
+    <text x="${width - paddingX}" y="${height - paddingY}" text-anchor="end" fill="#D8DEE9" font-size="12" font-style="italic">
+      by Zmovirzynski
+    </text>
+  </svg>`;
+  return svg;
+}
 
 function escapeXml(unsafe) {
   return unsafe
